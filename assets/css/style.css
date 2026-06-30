@@ -23,7 +23,7 @@
 
 
 
-  --speed: 1500ms;
+  --speed: 1000ms;
 }
 
 * {
@@ -50,7 +50,7 @@ a {
   opacity: 1;
   display: block;
   height: auto;
-  backface-visibility: hidden;
+  backface-visibility: hidden; 
   border-radius: 50%;
   border: 0;
   margin-left: auto;
@@ -58,12 +58,26 @@ a {
 }
 
 .round-image {
-margin: 0;
-
-max-width: 65%;
+  display: block;
+  margin: 0 auto 18px;
+  max-width: 65%;
   border-radius: 50%;
+}
 
+.col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
 
+.col-center .introText {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .showcase {
@@ -134,7 +148,7 @@ max-width: 65%;
 .content {
   position: absolute;
   text-align: center;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.65);
   color: #f1f1f1;
   padding: 50px;
   top: 50%;
@@ -181,6 +195,7 @@ height: 100%;
 .name {
   font-size: 80px;
   margin: 0;
+  letter-spacing: -0.01em;
   opacity: 0;
   transition: 1s opacity;
   animation: 2s anim-name ease-out;
@@ -202,12 +217,14 @@ height: 100%;
 
 .name2, .name3 {
   margin: 0;
+  letter-spacing: 0em;
   opacity: 0;
   transition: 1s opacity;
 }
 
 .animationClass, .fadeText-film, .logo, .fadeContact, .content, .homeFade {
   opacity: 1;
+  visibility: visible;
   transition: 2s opacity;
 }
 
@@ -257,6 +274,21 @@ height: 100%;
   margin: 0;
 }
 
+.homebtn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: calc(7% - 1rem - 5px);
+  top: 12%;
+  text-decoration: none;
+  background-color: transparent;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
 .menubtn {
   position: absolute;
@@ -327,7 +359,7 @@ li a {
 
 
 .list:hover, .summ:hover, .myHover:hover {
-  color: var(--left-btn-hover-color);
+  color: #04ADB0;
   text-decoration: none;
  
 }
@@ -341,6 +373,10 @@ li a {
   
 
   
+}
+
+.homebtn:hover {
+  color: #04ADB0 !important;
 }
 
 .container, .filmContainer {
@@ -642,7 +678,7 @@ footer {
 }
 
 .pimg-risen {
-  background-image: url('../images/risen.jpg');
+  background-image: url('../images/image3.jpg');
  height: 1000px;
 }
 
@@ -652,7 +688,7 @@ footer {
 }
 
 .pimg6 {
-  background-image: url('../images/image6.jpg');
+  background-image: url('../images/newImages/Portal.jpg');
  height: 600px;
 }
 
@@ -662,7 +698,22 @@ footer {
 }
 
 .pimg-contact {
-  background-image: url('../images/contact.jpg');
+  background-image: url('../images/newImages/telephone2.jpeg');
+ height: 800px;
+}
+
+.pimg-awards {
+  background-image: url('../images/newImages/Awards2.jpeg');
+ height: 800px;
+}
+
+.pimg-films {
+  background-image: url('../images/newImages/Lake.jpeg');
+ height: 800px;
+}
+
+.pimg-screenings {
+  background-image: url('../images/newImages/Lake.jpeg');
  height: 800px;
 }
 
@@ -670,7 +721,7 @@ footer {
 
 
 .pimg1 {
-  background-image: url('../images/image1.jpg');
+  background-image: url('../images/newImages/glitchy.jpg');
  height: 100%;
   
   
@@ -779,14 +830,13 @@ footer {
 }
 
 .introText {
-
-max-width: 1000px;
-margin: auto;
-padding: 30px;
-font-size: 1.1rem;
-color: white;
-background-color: black;
-line-height: 1.8;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  padding: 8px 30px 20px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: black;
+  line-height: 1.8;
 }
 
 
@@ -984,6 +1034,7 @@ line-height: 1.8;
  .key {
   font-weight: 900;
   font-size: 2.5rem;
+  letter-spacing: -10px;
  }
 
  .name2 {
@@ -1023,6 +1074,14 @@ line-height: 1.8;
 }
 
 
+}
+
+.black-bar {
+    background-color: black;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0; /* Adjust vertical padding to fit your needs */
+    text-align: center;
 }
 
 
