@@ -1085,7 +1085,7 @@ footer {
 }
 
 body.contact-body {
-  background-image: url('../images/background.jpg') !important;
+  background-image: url('.assets/images/newImages/telephone2.jpeg') !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
