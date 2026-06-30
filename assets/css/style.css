@@ -1084,5 +1084,13 @@ footer {
     text-align: center;
 }
 
+body.contact-body {
+  background-image: url('../images/newImages/telephone2.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 
 
