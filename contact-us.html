@@ -4,113 +4,101 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <title>Contact
-    </title>
+    <title>Contact</title>
   </head>
   <style>
-        body {
-            margin: 0;
-            background: black;
-        }
+    body {
+      margin: 0;
+      background: black;
+    }
 
-        .filmContainer {
-            min-height: 100vh;
-            background-image: url('./assets/images/contact/telephone2.jpeg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            background-attachment: fixed;
-        }
-    </style>
+    .filmContainer {
+      min-height: 100vh;
+      background-image: url('./assets/images/contact/telephone2.jpeg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
 
+    /* Keep controls above the overlay panel. */
+    .filmContainer .menubtn,
+    .filmContainer .menu-items {
+      z-index: 5;
+    }
 
+    .filmContainer .split-left {
+      z-index: 1;
+    }
+
+    .filmContainer .split-right {
+      width: 0;
+      right: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .filmContainer .split-right::before {
+      background-color: rgba(0, 0, 0, 0.65);
+    }
+
+    .filmContainer.hover-left .split-right {
+      width: var(--other-width-menu);
+    }
+
+    .filmContainer.hover-right .split-right {
+      width: 0;
+    }
+
+    .filmContainer.hover-left .split-left {
+      width: var(--hover-width-menu);
+    }
+
+    .filmContainer.hover-right .split-left {
+      width: 100%;
+    }
+  </style>
 
   <body>
-    <div class="filmContainer">
-  
-       <ul class="menu-items" style="top:15%">
-            <li><a class="list" href="index.html">Home</a></li>
+    <div class="filmContainer hover-right">
+      <ul class="menu-items" style="top:15%">
+        <li><a class="list" href="index.html">Home</a></li>
         <li><a class="list" href="about.html">About</a></li>
-        <li><a class="list" href="contac-us.html">Contact</a></li>
+        <li><a class="list" href="contact-us.html">Contact</a></li>
         <br>
-        <li >
-
+        <li>
           <p class="myHover" style="cursor: pointer;">
             <summary style="text-align: left; margin-left: 20px; padding: 0px; color:white" class="mysumm"></summary>
-          
-       
-          <p>
-            <p class="summ"></p>
- 
           </p>
+          <p class="summ"></p>
         </li>
-    
         <li><a style="color: white" class="hidebtn list" onclick="hideFunction()"></a></li>
-       
-      
       </ul>
-     
+
       <div class="split-left">
-        
-      
-      
-        
-           
-            <div class="ptext fadeText-film">
-                <div class="content">
-    
-                    <h1 class="name" style="color: #04ADB0">Contact</h1>
-                  
-                    
-                      <div class="name2" style="font-size: small;">
-
-                      
-                      <br><br>
-                      <h1 style="color:#ffffff"><b>demystifyshow@gmail.com</b></h1>
-                      <br><br>
-                        <a style="color: #cf004c" href="https://www.youtube.com/@Demystify-show"><i class="fab fa-youtube fa-3x"></i></a>
-                      </div>
-                    </div>
+        <div class="ptext fadeText-film">
+          <div class="content">
+            <h1 class="name" style="color: #04ADB0">Contact</h1>
+            <div class="name2" style="font-size: small;">
+              <br><br>
+              <h1 style="color:#ffffff"><b>demystifyshow@gmail.com</b></h1>
+              <br><br>
+              <a style="color: #cf004c" href="https://www.youtube.com/@Demystify-show"><i class="fab fa-youtube fa-3x"></i></a>
             </div>
-      
-       
-     
-
-
-  
-    
- 
-    
-    
-
-   
-             
-              
-    
-           
-              
-            <a style="color: white" class="menubtn" onclick="menuFunction()">Menu</a>
-          
-            
-          
-    
-           
-      
-     
-    
-         
+          </div>
         </div>
 
-    </body>
-           
-       <footer>
-        <p> <a style="color: #cf004c" href="https://www.youtube.com/@Demystify-show"><i class="fab fa-youtube fa-2x"></i></a>&nbsp;&nbsp; WATCH ON YOUTUBE</p>
-   
-      </footer> 
- 
-  
-      <script src="script.js"></script>
-    </body>
-  </html>
+        <a style="color: white" class="menubtn" onclick="menuFunction()">Menu</a>
+      </div>
+
+      <div class="split-right"></div>
+    </div>
+
+    <footer>
+      <p><a style="color: #cf004c" href="https://www.youtube.com/@Demystify-show"><i class="fab fa-youtube fa-2x"></i></a>&nbsp;&nbsp; WATCH ON YOUTUBE</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
