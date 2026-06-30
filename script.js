@@ -2,6 +2,23 @@ const left = document.querySelector('.hidebtn')
 const test = document.querySelector('.testbtn')
 const right = document.querySelector('.menubtn')
 // const container = document.querySelector('.container')
+
+function setMenuLabel(label) {
+  if (right) {
+    right.textContent = label
+  }
+}
+
+function setOpacity(el, value) {
+  if (el) {
+    el.style.opacity = String(value)
+  }
+}
+
+function isMenuOpen() {
+  return filmContainer && filmContainer.classList.contains('hover-left')
+}
+
 const filmContainer = document.querySelector('.filmContainer')
 var video = document.querySelector('.myVideo')
 var btn = document.getElementById("myBtn");
@@ -62,69 +79,65 @@ window.onload = function() {
 }
 
 function fadeupContact() {
-  textFade3.style.opacity = '1';
+  if (textFade3) {
+    setOpacity(textFade3, 1);
+  }
 }
 
 
 function fadeup() {
-  textFade.style.opacity = '1';
-  textFade2.style.opacity = '1';
-  animateText.style.opacity = '1';
-  textFade3.style.opacity = '1';
-  oa.style.opacity = '1';
-  fadeTextfilm.style.opacity = '1';
- 
+  if (textFade) setOpacity(textFade, 1);
+  if (textFade2) setOpacity(textFade2, 1);
+  if (animateText) setOpacity(animateText, 1);
+  if (textFade3) setOpacity(textFade3, 1);
+  if (oa) setOpacity(oa, 1);
+  if (fadeTextfilm) setOpacity(fadeTextfilm, 1);
 }
 
 
 function menuFunction() {
-  menu.style.opacity = 1
+  if (!filmContainer) return
+
+  if (isMenuOpen()) {
+    hideFunction()
+    return
+  }
+
+  if (menu) {
+    setOpacity(menu, 1)
+  }
 
   filmContainer.classList.add('hover-left')
   filmContainer.classList.remove('hover-right')
 
+  setOpacity(fadeTextfilm, 1)
+  setOpacity(animateText, 1)
+  setOpacity(contactFade, 1)
+  setOpacity(contentAbout, 1)
+  setOpacity(content, 1)
+  setOpacity(logoFade, 1)
 
-  if (window.innerWidth >= 700) {
-    menu.style.opacity = '1'
-  fadeTextfilm.style.opacity = '1'
-  animateText.style.opacity = '1'
-  contactFade.style.opacity = '1'
-  contentAbout.style.opacity = '1'
-  content.style.opacity = '1'
-  logoFade.style.opacity = '1'
- 
-  
-  
-   } 
-
-  menu.style.opacity = '1'
-  fadeTextfilm.style.opacity = '0'
-  animateText.style.opacity = '0'
-  contactFade.style.opacity = '0'
-  logoFade.style.opacity = '0'
-  contentAbout.style.opacity = '0'
-  content.style.opacity = '0'
-
- 
-  
-
-
-  
-
-
-
+  setMenuLabel('Hide')
 }
 
 function hideFunction() {
+  if (!filmContainer) return
+
   filmContainer.classList.add('hover-right')
   filmContainer.classList.remove('hover-left')
-  menu.style.opacity = '0'
-  animateText.style.opacity = '1'
-  fadeTextfilm.style.opacity = '1'
-  contactFade.style.opacity = '1'
-  logoFade.style.opacity = '1'
-  contentAbout.style.opacity = '1'
-  content.style.opacity = '1'
+
+  if (menu) {
+    setOpacity(menu, 0)
+  }
+
+  setOpacity(animateText, 1)
+  setOpacity(fadeTextfilm, 1)
+  setOpacity(contactFade, 1)
+  setOpacity(logoFade, 1)
+  setOpacity(contentAbout, 1)
+  setOpacity(content, 1)
+
+  setMenuLabel('Menu')
  
 
   
